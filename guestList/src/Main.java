@@ -8,31 +8,26 @@ public class Main {
 
         do {
             System.out.println();
-            System.out.println("______________________________________");
-            System.out.println("-Menu-");
-            System.out.println("1 - Display all guests");
-            System.out.println("2 - Add guest");
-            System.out.println("3 - Remove guest");
-            System.out.println("4 - Exit");
+
+            System.out.println();
+            System.out.println("______________________________________\n -Guests-\n");
+            for (String guest : guests) {
+                System.out.println(guest == null ? "--" : guest);
+            }
+            System.out.println("What do you want to do next? ");
+            System.out.println("______________________________________\n -Menu-\n");
+            System.out.println("1 - Add guest");
+            System.out.println("2 - Remove guest");
+            System.out.println("3 - Exit");
             System.out.println();
 
             System.out.println("Option: ");
 
             int option = scanner.nextInt();
 
-            if (option == 1) {
-                System.out.println("______________________________________");
-                System.out.println("-Guests-");
-                for (int i = 0; i < guests.length; i++) {
-                    if (guests[i] == null) {
-                        System.out.println("--");
-                    } else {
-                        System.out.println(guests[i]);
-                    }
-                }
-            } else if (option == 4) {
+           if (option == 3) {
                 break;
-            } else if (option == 2) {
+            } else if (option == 1) {
                 for (int i = 0; i < guests.length; i++) {
                     if (guests[i] == null) {
                         System.out.println("Name...");
@@ -42,7 +37,7 @@ public class Main {
                     }
                 }
 
-            } else if (option == 3) {
+            } else if (option == 2) {
                 System.out.println("Name...");
                 String name = scanner.next();
                 for (int i = 0; i < guests.length; i++) {
