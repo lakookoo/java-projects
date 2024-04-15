@@ -9,9 +9,7 @@ public class Main {
         insertTestNames();
 
         do {
-            System.out.println();
             displayGuests();
-            System.out.println();
             displayMenu();
             int option = getOption();
 
