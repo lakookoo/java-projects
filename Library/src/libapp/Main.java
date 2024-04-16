@@ -8,5 +8,9 @@ public class Main {
         app.searchByTitle("Castle");
         app.searchByTitle("night");
         app.searchByTitle("kook");
+        app.checkOutBook("83471");
+        app.checkOutBook("51576");
+        app.checkOutBook("5157");
+        app.checkInBook("83471");
     }
 }

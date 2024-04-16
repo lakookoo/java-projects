@@ -6,13 +6,17 @@ public class Book {
     private String genre;
     private String description;
     private String author;
+    private int quantity;
+    private int numCheckedOut;
 
-    public Book(String isbn, String title, String genre, String description, String author) {
+    public Book(String isbn, String title, String genre, String description, String author, int quantity, int numCheckedOut) {
         this.isbn = isbn;
         this.title = title;
         this.genre = genre;
         this.description = description;
         this.author = author;
+        this.quantity = quantity;
+        this.numCheckedOut = numCheckedOut;
     }
 
     public String getIsbn() {
@@ -55,5 +59,35 @@ public class Book {
         this.genre = genre;
     }
 
+    public int getNumCheckedOut() {
+        return numCheckedOut;
+    }
+
+    public void setNumCheckedOut(int numCheckedOut) {
+        this.numCheckedOut = numCheckedOut;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public boolean checkOut(){
+        if(numCheckedOut >= quantity){
+            return  false;
+        }
+        numCheckedOut++;
+        return true;
+    }
+    public boolean checkIn(){
+        if(numCheckedOut <= 0){
+            return false;
+        }
+        numCheckedOut--;
+        return true;
+    }
 
 }
