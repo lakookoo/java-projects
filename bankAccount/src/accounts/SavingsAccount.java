@@ -10,10 +10,6 @@ public class SavingsAccount extends Account{
         double fee = 0.025 * amount;
         amount += fee;
 
-        if(amount > balance){
-            return false;
-        }
-        balance -= amount;
-        return true;
+        return super.withdraw(amount);
     }
 }
