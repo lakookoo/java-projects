@@ -1,37 +1,23 @@
-import accounts.Account;
-import accounts.CheckingAccount;
-import accounts.SavingsAccount;
+import accounts.*;
+
+import javax.swing.plaf.synth.SynthDesktopIconUI;
 
 public class Main {
     public static void main(String[] args) {
-        Account account = new Account(100, 0.025);
-        account.status();
-        account.withdraw(45.45);
-        account.status();
-        account.withdraw(62.98);
-        account.status();
-        account.deposit(32.34);
-        account.status();
+        SilverCheckingAccount silver = new SilverCheckingAccount(5000, 0.025, 1000);
+        GoldCheckingAccount gold = new GoldCheckingAccount(5000, 0.025, 1000);
+        DiamondCheckingAccount diamond = new DiamondCheckingAccount(5000, 0.025, 1000);
 
-        CheckingAccount checkingAccount = new CheckingAccount(300, 0.03, 400);
-        checkingAccount.status();
-        if (checkingAccount.purchase(18.68)) {
-            System.out.println("Purchase successful");
-        } else {
-            System.out.println("Purchase failed");
-        }
-        System.out.println(checkingAccount.getRewardPoints());
+        System.out.println(silver.getRewardPoints());
+        System.out.println(gold.getRewardPoints());
+        System.out.println(diamond.getRewardPoints());
 
-        CheckingAccount ca = new CheckingAccount(100, 0.037, 500);
-        SavingsAccount sa = new SavingsAccount(100, 0.045);
+        silver.purchase(3500);
+        gold.purchase(3500);
+        diamond.purchase(3500);
 
-        ca.status();
-        sa.status();
-
-        sa.withdraw(10);
-        ca.withdraw(10);
-
-        ca.status();
-        sa.status();
+        System.out.println(silver.getRewardPoints());
+        System.out.println(gold.getRewardPoints());
+        System.out.println(diamond.getRewardPoints());
     }
 }

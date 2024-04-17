@@ -2,6 +2,7 @@ package accounts;
 
 public class CheckingAccount extends Account {
     public int rewardPoints;
+
     public CheckingAccount(double balance, double interestRate, int rewardPoints) {
         super(balance, interestRate);
         this.rewardPoints = rewardPoints;
@@ -13,11 +14,14 @@ public class CheckingAccount extends Account {
 
     public boolean purchase(double cost) {
         if (cost > balance) {
-            return  false;
+            return false;
         }
-
         balance -= cost;
-        rewardPoints += (int) (cost * 10);
+        rewardPoints += calculateRewardPoints(cost);
         return true;
+    }
+
+    public int calculateRewardPoints(double cost) {
+        return (int) (cost * 10);
     }
 }
