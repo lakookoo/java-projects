@@ -1,6 +1,6 @@
 package accounts;
 
-public class Account {
+public abstract class Account {
     protected double balance;
     private double interestRate;
 
